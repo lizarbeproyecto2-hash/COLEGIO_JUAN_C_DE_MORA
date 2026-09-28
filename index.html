@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I.E. Juan C. de Mora - Chincha Baja | Nivel Secundaria - Cód. Modular 0553800</title>
+  <style>
+    /* === VARIABLES DE COLOR Y ESTILO === */
+    :root {
+      --rojo: #D32F2F;
+      --rojo-oscuro: #B71C1C;
+      --azul-oscuro: #1A237E;
+      --azul-noche: #0D1438;
+      --azul-claro: #2196F3;
+      --dorado: #FFC107;
+      --dorado-oscuro: #FFA000;
+      --blanco: #FFFFFF;
+      --gris-claro: #F8FAFC;
+      --gris-medio: #E2E8F0;
+      --texto-oscuro: #1E293B;
+      --sombra: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --sombra-hover: 0 16px 32px rgba(26, 35, 126, 0.16);
+      --borde-redondeado: 14px;
+      --transicion: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* === RESET Y GLOBALES === */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--gris-claro); color: var(--texto-oscuro); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* === UTILIDADES === */
+    .container { width: 90%; max-width: 1220px; margin: 0 auto; padding: 0 20px; }
+    .section-padding { padding: 85px 0; }
+    .section-title { font-size: 2.25rem; text-align: center; margin-bottom: 14px; color: var(--azul-oscuro); position: relative; font-weight: 800; letter-spacing: -0.5px; }
+    .section-title::after { content: ''; display: block; width: 85px; height: 4px; background: var(--dorado); margin: 12px auto 0; border-radius: 2px; }
+    .section-subtitle { text-align: center; max-width: 760px; margin: 0 auto 50px; color: #64748B; font-size: 1.05rem; }
+    
+    .btn { display: inline-block; background: var(--rojo); color: var(--blanco); padding: 12px 30px; border-radius: 50px; font-weight: 700; transition: var(--transicion); border: 2px solid var(--rojo); cursor: pointer; box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25); }
+    .btn:hover { background: transparent; color: var(--rojo); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--blanco); border: 2px solid var(--blanco); box-shadow: none; }
+    .btn-outline:hover { background: var(--blanco); color: var(--azul-oscuro); transform: translateY(-2px); }
+
+    /* === BARRA SUPERIOR INSTITUCIONAL (TOP BAR) === */
+    .top-bar { background: #0A0F2B; color: #94A3B8; font-size: 0.82rem; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
+    .top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .top-bar-left, .top-bar-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .top-bar-item { display: flex; align-items: center; gap: 6px; }
+    .badge-modular { background: rgba(255, 193, 7, 0.16); color: var(--dorado); border: 1px solid rgba(255, 193, 7, 0.4); padding: 2px 9px; border-radius: 4px; font-weight: 700; letter-spacing: 0.5px; }
+    .top-bar-link { color: #CBD5E1; transition: var(--transicion); display: flex; align-items: center; gap: 6px; font-weight: 600; }
+    .top-bar-link:hover { color: var(--dorado); }
+    .top-bar-link.fb-link { color: #60A5FA; }
+    .top-bar-link.fb-link:hover { color: #93C5FD; text-decoration: underline; }
+
+    /* === HEADER === */
+    header { background-color: var(--azul-oscuro); color: var(--blanco); padding: 14px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.22); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-img { width: 54px; height: 54px; border-radius: 8px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3)); }
+    .logo-text h1 { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px; line-height: 1.2; }
+    .logo-text p { font-size: 0.76rem; color: var(--dorado); font-weight: 700; text-transform: uppercase; letter-spacing: 1.1px; }
+    nav ul { display: flex; gap: 16px; align-items: center; }
+    nav a { font-weight: 600; font-size: 0.88rem; transition: var(--transicion); position: relative; padding: 4px 0; }
+    nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--dorado); transition: var(--transicion); }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--dorado); }
+    .nav-btn-highlight { background: rgba(255, 193, 7, 0.15); border: 1px solid var(--dorado); padding: 4px 12px !important; border-radius: 20px; color: var(--dorado) !important; }
+    .nav-btn-highlight::after { display: none !important; }
+    .nav-btn-highlight:hover { background: var(--dorado) !important; color: #0A0F2B !important; }
+    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--blanco); user-select: none; }
+
+    /* === HERO === */
+    .hero { background: linear-gradient(135deg, rgba(26, 35, 126, 0.92) 0%, rgba(13, 27, 74, 0.96) 100%), url('IMAGENES/COLEGIO JUAN D MORA.png'); background-size: cover; background-position: center; color: var(--blanco); padding: 105px 0; position: relative; overflow: hidden; }
+    .hero-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 50px; flex-wrap: wrap; }
+    .hero-text { flex: 1 1 500px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 193, 7, 0.18); border: 1px solid var(--dorado); color: var(--dorado); padding: 5px 16px; border-radius: 30px; font-size: 0.84rem; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .hero-text h2 { font-size: 2.9rem; margin-bottom: 18px; line-height: 1.2; font-weight: 800; }
+    .hero-text h2 span { color: var(--dorado); }
+    .hero-text p { font-size: 1.1rem; margin-bottom: 28px; opacity: 0.95; max-width: 620px; line-height: 1.7; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-fb-hero { display: inline-flex; align-items: center; gap: 8px; background: #1877F2; color: white; padding: 12px 24px; border-radius: 50px; font-weight: 700; font-size: 0.92rem; transition: var(--transicion); border: 2px solid #1877F2; }
+    .btn-fb-hero:hover { background: #145dbf; border-color: #145dbf; transform: translateY(-2px); }
+    
+    .hero-image { flex: 1 1 360px; display: flex; justify-content: center; align-items: center; }
+    .hero-img-wrapper { position: relative; width: 100%; max-width: 440px; border-radius: 18px; box-shadow: 0 25px 50px rgba(0,0,0,0.6); border: 4px solid var(--dorado); overflow: hidden; background: #0A1133; }
+    .hero-img-wrapper img.hero-main-photo { width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.6s ease; cursor: pointer; }
+    .hero-img-wrapper:hover img.hero-main-photo { transform: scale(1.06); }
+    .hero-badge { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(10, 17, 50, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255, 193, 7, 0.35); display: flex; align-items: center; gap: 12px; color: var(--blanco); }
+    .hero-badge-logo { width: 42px; height: 42px; object-fit: contain; }
+    .hero-badge strong { display: block; font-size: 0.93rem; color: var(--dorado); line-height: 1.2; }
+    .hero-badge span { font-size: 0.77rem; color: #CFD8DC; }
+
+    /* === HISTORIA === */
+    .historia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+    .historia-texto h3 { font-size: 1.85rem; color: var(--azul-oscuro); margin-bottom: 20px; line-height: 1.3; }
+    .historia-texto p { margin-bottom: 16px; text-align: justify; color: #475569; font-size: 0.98rem; }
+    .historia-imagen-wrap { position: relative; border-radius: var(--borde-redondeado); overflow: hidden; box-shadow: var(--sombra-hover); border: 3px solid var(--gris-medio); cursor: pointer; }
+    .historia-imagen-wrap img { width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease; }
+    .historia-imagen-wrap:hover img { transform: scale(1.05); }
+    .historia-pie-foto { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(13, 20, 56, 0.9)); color: white; padding: 18px 20px; font-weight: 600; font-size: 0.9rem; }
+    .historia-destacado { background: var(--blanco); padding: 30px; border-radius: var(--borde-redondeado); box-shadow: var(--sombra); border-left: 6px solid var(--rojo); margin-top: 25px; }
+    .historia-destacado h4 { color: var(--rojo); font-size: 1.3rem; margin-bottom: 8px; }
+    .historia-destacado .año { font-size: 3.2rem; font-weight: 900; color: var(--dorado); display: block; line-height: 1; }
+
+    /* === MISIÓN, VISIÓN, VALORES === */
+    .mvv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .mvv-card { background: var(--blanco); padding: 40px 30px; border-radius: var(--borde-redondeado); box-shadow: var(--sombra); text-align: center; transition: var(--transicion); border-top: 5px solid var(--azul-claro); }
+    .mvv-card:hover { transform: translateY(-8px); border-top-color: var(--rojo); box-shadow: var(--sombra-hover); }
+    .mvv-card .icono { font-size: 3rem; margin-bottom: 18px; }
+    .mvv-card h3 { color: var(--azul-oscuro); margin-bottom: 15px; font-size: 1.5rem; }
+    .mvv-card p { color: #555; font-size: 0.95rem; line-height: 1.65; }
+    .valores-lista { text-align: left; margin-top: 15px; }
+    .valores-lista li { margin-bottom: 9px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: #334155; }
+    .valores-lista li::before { content: '✓'; color: var(--rojo); font-weight: 900; font-size: 1.1rem; }
+
+    /* === TALLERES CON IMÁGENES REALES === */
+    .talleres-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px; }
+    .taller-item { background: var(--blanco); border-radius: var(--borde-redondeado); overflow: hidden; box-shadow: var(--sombra); transition: var(--transicion); display: flex; flex-direction: column; border-top: 4px solid var(--azul-claro); }
+    .taller-item:hover { transform: translateY(-8px); box-shadow: var(--sombra-hover); border-top-color: var(--rojo); }
+    .taller-img-wrap { height: 210px; width: 100%; overflow: hidden; position: relative; cursor: pointer; background: #E2E8F0; }
+    .taller-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .taller-item:hover .taller-img-wrap img { transform: scale(1.08); }
+    .taller-info { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .taller-info h4 { color: var(--azul-oscuro); margin-bottom: 10px; font-size: 1.25rem; font-weight: 700; }
+    .taller-info p { font-size: 0.92rem; color: #64748B; margin-bottom: 16px; flex: 1; line-height: 1.6; }
+    .taller-tag { align-self: flex-start; background: #EFF6FF; color: var(--azul-oscuro); padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; border: 1px solid #BFDBFE; }
+
+    /* ============================================================ */
+    /* === SECCIÓN NUEVA: DIRECTORIO DEL PERSONAL (#directorio) === */
+    /* ============================================================ */
+    .section-directorio { background: #F8FAFC; }
+    .directorio-directivos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+    .directivo-card {
+      background: var(--blanco);
+      border-radius: var(--borde-redondeado);
+      box-shadow: var(--sombra);
+      padding: 30px 25px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      position: relative;
+      border: 1px solid #E2E8F0;
+      transition: var(--transicion);
+    }
+    .directivo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .directivo-card.directora {
+      border-top: 5px solid var(--rojo);
+    }
+    .directivo-card.subdirector {
+      border-top: 5px solid var(--azul-oscuro);
+    }
+    .directivo-badge {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 12px;
+      border-radius: 20px;
+    }
+    .directora .directivo-badge {
+      background: #FEE2E2;
+      color: var(--rojo);
+    }
+    .subdirector .directivo-badge {
+      background: #EFF6FF;
+      color: var(--azul-oscuro);
+    }
+    .directivo-avatar {
+      font-size: 3rem;
+      background: #F1F5F9;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #E2E8F0;
+      flex-shrink: 0;
+    }
+    .directivo-info h3 {
+      font-size: 1.25rem;
+      color: var(--azul-oscuro);
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+    .directivo-cargo {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--dorado-oscuro);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .directivo-info p {
+      font-size: 0.85rem;
+      color: #64748B;
+      line-height: 1.45;
+    }
+    .plana-docente-box {
+      background: var(--blanco);
+      border-radius: var(--borde-redondeado);
+      box-shadow: var(--sombra);
+      border: 1px solid #E2E8F0;
+      overflow: hidden;
+    }
+    .plana-docente-header {
+      padding: 26px 30px;
+      background: linear-gradient(135deg, #101642 0%, var(--azul-oscuro) 100%);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .plana-docente-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dorado);
+      margin-bottom: 4px;
+    }
+    .plana-docente-header p {
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+    .buscador-docente-wrap {
+      flex: 1 1 280px;
+      max-width: 420px;
+    }
+    .buscador-docente-wrap input {
+      width: 100%;
+      padding: 11px 18px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transicion);
+    }
+    .buscador-docente-wrap input::placeholder {
+      color: #CBD5E1;
+    }
+    .buscador-docente-wrap input:focus {
+      background: #FFFFFF;
+      color: var(--texto-oscuro);
+      border-color: var(--dorado);
+    }
+    .tabla-directorio-responsive {
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+    .tabla-directorio {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+    .tabla-directorio th {
+      background: #F1F5F9;
+      color: var(--azul-oscuro);
+      padding: 14px 24px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #CBD5E1;
+    }
+    .tabla-directorio td {
+      padding: 15px 24px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+      vertical-align: middle;
+    }
+    .tabla-directorio tr:hover {
+      background: #F8FAFC;
+    }
+    .docente-nombre {
+      font-weight: 700;
+      color: var(--azul-oscuro);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .docente-avatar-mini {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #EEF4FC;
+      color: var(--azul-oscuro);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .docente-area-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: #EFF6FF;
+      color: var(--azul-oscuro);
+      border: 1px solid #BFDBFE;
+    }
+    .btn-celular {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ECFDF5;
+      color: #047857;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      border: 1px solid #A7F3D0;
+      transition: var(--transicion);
+    }
+    .btn-celular:hover {
+      background: #10B981;
+      color: white;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================ */
+    /* === SECCIÓN: CAPACITACIÓN DOCENTE (#capacitacion) === */
+    /* ============================================================ */
+    .section-capacitacion { background: #FFFFFF; position: relative; }
+    .capacitacion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 26px; }
+    .capacitacion-card { background: #FFFFFF; border-radius: var(--borde-redondeado); box-shadow: var(--sombra); padding: 28px 24px; display: flex; flex-direction: column; align-items: flex-start; transition: var(--transicion); border-top: 5px solid var(--azul-claro); border-left: 1px solid #F1F5F9; border-right: 1px solid #F1F5F9; border-bottom: 2px solid transparent; position: relative; }
+    .capacitacion-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-hover); border-top-color: var(--rojo); border-bottom-color: var(--dorado); }
+    .capacitacion-card.destacada { border-top-color: var(--dorado-oscuro); background: linear-gradient(to bottom, #FFFFFF 0%, #F8FAFD 100%); }
+    .cap-top { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 16px; }
+    .cap-icon-wrap { width: 56px; height: 56px; border-radius: 12px; background: #EFF6FF; display: flex; align-items: center; justify-content: center; padding: 10px; transition: var(--transicion); border: 1px solid #DBEAFE; }
+    .capacitacion-card:hover .cap-icon-wrap { transform: scale(1.08); background: #E0EDFD; }
+    .cap-icon-wrap img { width: 36px; height: 36px; object-fit: contain; }
+    .cap-badge { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; background: rgba(33, 150, 243, 0.12); color: var(--azul-oscuro); }
+    .capacitacion-card h4 { font-size: 1.22rem; color: var(--azul-oscuro); margin-bottom: 8px; font-weight: 800; line-height: 1.3; }
+    .capacitacion-card p { font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 22px; flex-grow: 1; }
+    .btn-capacitacion { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 18px; background: var(--azul-oscuro); color: var(--blanco); border-radius: 8px; font-size: 0.88rem; font-weight: 700; transition: var(--transicion); border: none; margin-top: auto; text-align: center; }
+    .btn-capacitacion:hover { background: var(--rojo); color: var(--blanco); box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35); transform: translateY(-2px); }
+    .btn-capacitacion svg { width: 16px; height: 16px; transition: transform 0.2s ease; fill: currentColor; }
+    .btn-capacitacion:hover svg { transform: translateX(4px); }
+    
+    .capacitacion-banner { margin-top: 45px; background: linear-gradient(135deg, var(--azul-oscuro) 0%, #0D1B4A 100%); border-radius: var(--borde-redondeado); padding: 32px 36px; color: white; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; border: 1px solid rgba(255, 193, 7, 0.35); box-shadow: var(--sombra); }
+    .capacitacion-banner-text h3 { font-size: 1.45rem; color: var(--dorado); margin-bottom: 8px; font-weight: 800; }
+    .capacitacion-banner-text p { font-size: 0.95rem; opacity: 0.92; max-width: 680px; line-height: 1.6; }
+    .capacitacion-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .cap-pill { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+
+    /* ============================================================ */
+    /* === SECCIONES DE RECURSOS: DOCENTES Y ESTUDIANTES === */
+    /* ============================================================ */
+    .recursos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .recurso-card { background: var(--blanco); border-radius: var(--borde-redondeado); box-shadow: var(--sombra); padding: 26px 22px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; transition: var(--transicion); border-top: 4px solid var(--azul-oscuro); border-left: 1px solid rgba(0,0,0,0.04); border-right: 1px solid rgba(0,0,0,0.04); border-bottom: 1px solid rgba(0,0,0,0.06); position: relative; }
+    .recurso-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-hover); border-top-color: var(--rojo); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 16px; }
+    .card-icon-wrap { width: 54px; height: 54px; border-radius: 12px; background: #F0F4FA; display: flex; align-items: center; justify-content: center; padding: 8px; transition: var(--transicion); }
+    .recurso-card:hover .card-icon-wrap { transform: scale(1.08); background: #E8EEF8; }
+    .card-icon-wrap img { width: 36px; height: 36px; object-fit: contain; }
+    .card-badge { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; background: rgba(33, 150, 243, 0.1); color: var(--azul-oscuro); }
+    .recurso-card h4 { font-size: 1.18rem; color: var(--azul-oscuro); font-weight: 700; margin-bottom: 8px; }
+    .recurso-card p { font-size: 0.88rem; color: #555; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
+    .btn-card { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 18px; background: #F4F6FB; color: var(--azul-oscuro); border-radius: 8px; font-size: 0.88rem; font-weight: 700; transition: var(--transicion); border: 1px solid #E0E6F0; margin-top: auto; text-align: center; }
+    .btn-card:hover { background: var(--rojo); color: var(--blanco); border-color: var(--rojo); box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3); }
+    .btn-card svg { width: 16px; height: 16px; transition: transform 0.2s ease; fill: currentColor; }
+    .btn-card:hover svg { transform: translateX(4px); }
+
+    /* ============================================================ */
+    /* === SECCIÓN 3: INTELIGENCIA ARTIFICIAL EDUCATIVA (#ia) === */
+    /* ============================================================ */
+    .section-ia { background: radial-gradient(circle at 50% 10%, #1A2865 0%, #0D1438 60%, #070B1F 100%); color: var(--blanco); position: relative; overflow: hidden; }
+    .section-ia::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 650px; height: 350px; background: radial-gradient(ellipse, rgba(33, 150, 243, 0.22), transparent 70%); pointer-events: none; }
+    .section-ia .section-title { color: var(--blanco); }
+    .section-ia .section-title::after { background: linear-gradient(90deg, var(--azul-claro), var(--dorado)); }
+    .section-ia .section-subtitle { color: #CFD8DC; }
+    .ia-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 26px; position: relative; z-index: 1; }
+    .ia-card { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--borde-redondeado); padding: 28px 24px; display: flex; flex-direction: column; align-items: flex-start; transition: var(--transicion); position: relative; overflow: hidden; }
+    .ia-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--azul-claro), var(--dorado)); opacity: 0; transition: var(--transicion); }
+    .ia-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 193, 7, 0.55); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(33, 150, 243, 0.25); }
+    .ia-card:hover::before { opacity: 1; }
+    .ia-card .card-icon-wrap { background: rgba(255, 255, 255, 0.09); border: 1px solid rgba(255, 255, 255, 0.18); }
+    .ia-card:hover .card-icon-wrap { background: rgba(255, 255, 255, 0.15); border-color: var(--dorado); }
+    .ia-card .card-badge { background: rgba(255, 193, 7, 0.15); color: var(--dorado); border: 1px solid rgba(255, 193, 7, 0.35); }
+    .ia-card h4 { font-size: 1.25rem; color: var(--blanco); margin-bottom: 8px; }
+    .ia-card p { font-size: 0.88rem; color: #B0BEC5; line-height: 1.55; margin-bottom: 22px; flex-grow: 1; }
+    .ia-card .btn-card { background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(26, 35, 126, 0.5)); color: #E3F2FD; border: 1px solid rgba(33, 150, 243, 0.45); }
+    .ia-card .btn-card:hover { background: linear-gradient(135deg, var(--dorado) 0%, #FFA000 100%); color: #0A0F24; border-color: var(--dorado); box-shadow: 0 6px 18px rgba(255, 193, 7, 0.4); }
+
+    /* ============================================================ */
+    /* === GALERÍA RENOVADA CON FILTROS Y LIGHTBOX === */
+    /* ============================================================ */
+    .galeria-filtros { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
+    .filtro-btn { background: var(--blanco); color: var(--azul-oscuro); border: 1.5px solid #CBD5E1; padding: 9px 22px; border-radius: 30px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: var(--transicion); }
+    .filtro-btn:hover, .filtro-btn.active { background: var(--azul-oscuro); color: var(--blanco); border-color: var(--azul-oscuro); box-shadow: 0 4px 12px rgba(26, 35, 126, 0.22); }
+    
+    .galeria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+    .galeria-item { position: relative; border-radius: var(--borde-redondeado); overflow: hidden; box-shadow: var(--sombra); height: 230px; cursor: pointer; background: #E2E8F0; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+    .galeria-item:hover img { transform: scale(1.09); }
+    .galeria-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13, 20, 56, 0.9) 0%, rgba(13, 20, 56, 0.3) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; color: white; opacity: 0.95; transition: var(--transicion); }
+    .galeria-overlay h5 { font-size: 1.05rem; margin-bottom: 4px; color: var(--blanco); font-weight: 700; }
+    .galeria-overlay span { font-size: 0.8rem; color: var(--dorado); font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+    /* === LOGROS Y RECONOCIMIENTOS CON FOTOS REALES === */
+    .logros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .logro-card { background: var(--blanco); border-radius: var(--borde-redondeado); box-shadow: var(--sombra); overflow: hidden; display: flex; flex-direction: column; transition: var(--transicion); border-bottom: 4px solid var(--dorado); }
+    .logro-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-hover); border-bottom-color: var(--rojo); }
+    .logro-img-wrap { height: 220px; width: 100%; overflow: hidden; position: relative; background: #E2E8F0; cursor: pointer; }
+    .logro-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .logro-card:hover .logro-img-wrap img { transform: scale(1.06); }
+    .logro-tag { position: absolute; top: 14px; left: 14px; background: var(--azul-oscuro); color: var(--blanco); padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+    .logro-body { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+    .logro-body h4 { color: var(--azul-oscuro); font-size: 1.25rem; margin-bottom: 12px; line-height: 1.35; font-weight: 700; }
+    .logro-body p { color: #555; font-size: 0.93rem; line-height: 1.6; }
+
+    /* === NOTICIAS Y ACTIVIDADES CON FOTOS REALES === */
+    .noticias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
+    .noticia-card { background: var(--blanco); border-radius: var(--borde-redondeado); overflow: hidden; box-shadow: var(--sombra); transition: var(--transicion); display: flex; flex-direction: column; }
+    .noticia-card:hover { box-shadow: var(--sombra-hover); transform: translateY(-8px); }
+    .noticia-img-wrap { height: 220px; width: 100%; position: relative; overflow: hidden; cursor: pointer; background: #E2E8F0; }
+    .noticia-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .noticia-card:hover .noticia-img-wrap img { transform: scale(1.08); }
+    .noticia-fecha { position: absolute; top: 15px; left: 15px; background: var(--rojo); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+    .noticia-contenido { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+    .noticia-contenido h4 { color: var(--azul-oscuro); margin-bottom: 10px; font-size: 1.25rem; line-height: 1.35; font-weight: 700; }
+    .noticia-contenido p { color: #64748B; font-size: 0.92rem; margin-bottom: 18px; flex: 1; line-height: 1.6; }
+    .leer-mas { color: var(--rojo); font-weight: 700; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: var(--transicion); }
+    .leer-mas:hover { gap: 10px; color: var(--rojo-oscuro); }
+
+    /* === CONTACTO Y REDES OFICIALES === */
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .contacto-info h3 { color: var(--azul-oscuro); margin-bottom: 20px; font-size: 1.4rem; }
+    .contacto-info ul li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .contacto-form input, .contacto-form textarea { width: 100%; padding: 13px; margin-bottom: 15px; border: 1px solid #CBD5E1; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+    .contacto-form button { width: 100%; padding: 13px; background: var(--rojo); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: var(--transicion); font-size: 1rem; }
+    .contacto-form button:hover { background: var(--rojo-oscuro); }
+    
+    .redes-destacadas { display: flex; flex-direction: column; gap: 12px; margin-top: 25px; }
+    .red-card { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 10px; transition: var(--transicion); }
+    .red-card:hover { border-color: #1877F2; background: #F8FAFC; transform: translateX(5px); box-shadow: var(--sombra); }
+    .red-card-left { display: flex; align-items: center; gap: 12px; }
+    .red-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: #EBF5FF; color: #1877F2; }
+
+    /* === FOOTER === */
+    footer { background: #101642; color: var(--blanco); padding: 65px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: var(--dorado); margin-bottom: 20px; font-size: 1.15rem; font-weight: 700; }
+    .footer-col p, .footer-col li { font-size: 0.9rem; opacity: 0.85; margin-bottom: 10px; }
+    .footer-col a { transition: var(--transicion); }
+    .footer-col a:hover { color: var(--dorado); padding-left: 4px; }
+    .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.85rem; opacity: 0.75; }
+
+    /* === LIGHTBOX MODAL === */
+    .lightbox-modal { position: fixed; inset: 0; background: rgba(7, 11, 31, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
+    .lightbox-modal.active { display: flex; opacity: 1; }
+    .lightbox-content { position: relative; max-width: 950px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; align-items: center; animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes zoomIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .lightbox-img { max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7); border: 2px solid rgba(255, 255, 255, 0.2); }
+    .lightbox-caption { color: white; margin-top: 16px; font-size: 1.1rem; text-align: center; font-weight: 700; }
+    .lightbox-close { position: absolute; top: -45px; right: 0; color: white; font-size: 2.2rem; cursor: pointer; line-height: 1; transition: var(--transicion); background: none; border: none; }
+    .lightbox-close:hover { color: var(--dorado); transform: scale(1.2); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 992px) {
+      .hero-text h2 { font-size: 2.3rem; }
+      .historia-grid, .contacto-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .top-bar-left, .top-bar-right { justify-content: center; width: 100%; }
+      .header-content { flex-direction: row; justify-content: space-between; }
+      nav ul { position: absolute; top: 100%; left: 0; width: 100%; background: var(--azul-oscuro); flex-direction: column; gap: 0; padding: 15px 0; display: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+      nav ul.active { display: flex; }
+      nav ul li { width: 100%; text-align: center; }
+      nav ul li a { display: block; padding: 12px 20px; font-size: 1rem; }
+      nav a::after { display: none; }
+      .menu-toggle { display: block; }
+      .hero-text h2 { font-size: 1.9rem; }
+      .section-title { font-size: 1.8rem; }
+      .hero-image img { width: 220px; }
+      .capacitacion-banner { flex-direction: column; text-align: center; }
+      .capacitacion-pills { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === BARRA SUPERIOR INSTITUCIONAL === -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <span>🏫 Cód. Modular:</span>
+          <span class="badge-modular">0553800</span>
+        </div>
+        <div class="top-bar-item">
+          <span>👩‍💼 Directora:</span>
+          <strong style="color: #F8FAFC;">Wong Prada, Claudia Patricia</strong>
+        </div>
+        <div class="top-bar-item">
+          <span>📍 Chincha Baja, Ica</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer" class="top-bar-link" title="Portal del Ministerio de Educación">
+          🏛️ MINEDU
+        </a>
+        <a href="https://siagie.minedu.gob.pe" target="_blank" rel="noopener noreferrer" class="top-bar-link" title="Sistema de Gestión Escolar SIAGIE">
+          📊 SIAGIE
+        </a>
+        <a href="https://campus.perueduca.pe" target="_blank" rel="noopener noreferrer" class="top-bar-link" title="Campus Virtual PerúEduca">
+          🎓 PerúEduca
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61588286226233" target="_blank" rel="noopener noreferrer" class="top-bar-link fb-link" title="Facebook Oficial de la I.E. Juan C. de Mora">
+          📘 Facebook I.E. Mora
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61592740835634" target="_blank" rel="noopener noreferrer" class="top-bar-link fb-link" title="Facebook Oficial de la UGEL Chincha">
+          🏛️ UGEL Chincha
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- === HEADER CON INSIGNIA OFICIAL === -->
+  <header>
+    <div class="container header-content">
+      <div class="logo-area">
+        <img src="IMAGENES/insignia.png" alt="Insignia Juan C. de Mora" class="logo-img">
+        <div class="logo-text">
+          <h1>Juan C. de Mora</h1>
+          <p>Chincha Baja - Cód. 0553800</p>
+        </div>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</div>
+      <nav>
+        <ul id="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#mision">Misión</a></li>
+          <li><a href="#talleres">Talleres</a></li>
+          <li><a href="#directorio" class="nav-btn-highlight">Directorio</a></li>
+          <li><a href="#capacitacion">Capacitación</a></li>
+          <li><a href="#docentes">Docentes</a></li>
+          <li><a href="#estudiantes">Estudiantes</a></li>
+          <li><a href="#ia">IA</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#logros">Logros</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- === HERO CON FACHADA REAL E INSIGNIA === -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-tag">
+          <span>🏛️ Cód. Modular: 0553800</span> &bull; <span>Bodas de Oro (1974 - 2024)</span>
+        </span>
+        <h2>Bienvenidos a la <span>I.E. Juan C. de Mora</span></h2>
+        <p>Formando líderes con sólidos valores cívicos, identidad cultural afroperuana y excelencia académica en Chincha Baja. Bajo la dirección de la <strong>Lic. Wong Prada, Claudia Patricia</strong> y el subdirector <strong>Ruiz Sotelo, Percy Jesús</strong>, reafirmamos nuestro compromiso con la juventud morina.</p>
+        <div class="hero-buttons">
+          <a href="#directorio" class="btn">Directorio del Personal</a>
+          <a href="https://www.facebook.com/profile.php?id=61588286226233" target="_blank" rel="noopener noreferrer" class="btn-fb-hero">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook Institucional
+          </a>
+          <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-img-wrapper">
+          <img src="IMAGENES/COLEGIO JUAN D MORA.png" alt="Fachada de la I.E. Juan C. de Mora" class="hero-main-photo" onclick="abrirLightbox(this.src, 'Frontis y Campus Central de la I.E. Juan C. de Mora - Chincha Baja (Cód. 0553800)')">
+          <div class="hero-badge">
+            <img src="IMAGENES/insignia.png" alt="Insignia Oficial" class="hero-badge-logo">
+            <div>
+              <strong>I.E. Juan C. de Mora</strong>
+              <span>Cód. Modular: 0553800 &bull; Chincha Baja</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === HISTORIA CON FOTO REAL DE DESFILE CÍVICO === -->
+  <section class="section-padding" id="historia">
+    <div class="container">
+      <h2 class="section-title">Nuestra Historia</h2>
+      <p class="section-subtitle">Un legado de patriotismo, educación y desarrollo para Chincha Baja.</p>
+      <div class="historia-grid">
+        <div class="historia-texto">
+          <h3>Bodas de Oro: 50 años formando generaciones de honor</h3>
+          <p>La Institución Educativa Juan C. de Mora lleva con orgullo el nombre del héroe local y marino peruano <strong>Juan C. de Mora y Causillas</strong>, nacido en nuestra histórica tierra de Chincha Baja y símbolo eterno de valor durante la Guerra del Pacífico.</p>
+          <p>En el año 2024 celebramos nuestras <strong>Bodas de Oro</strong> conmemorando cinco décadas de fundación. Nuestra delegación estudiantil, docentes y exalumnos engalanaron la Plaza de Armas de Chincha Baja, reafirmando nuestro liderazgo cívico y pedagógico en toda la provincia.</p>
+          <div class="historia-destacado">
+            <span class="año">1974</span>
+            <h4>Fundación de nuestra institución</h4>
+            <p>Desde nuestra creación, identificados con el Código Modular <strong>0553800</strong>, hemos sido el pilar de la educación secundaria en Chincha Baja, proyectándonos hacia el futuro con innovación digital.</p>
+          </div>
+        </div>
+        <div class="historia-imagen-wrap" onclick="abrirLightbox('IMAGENES/DESFILE  PRIMER PUESTO FIESTAS PATRIAS EN CHINCHA BAJA.png', 'Delegación Escolar Juan C. de Mora en el Desfile Cívico Escolar en Chincha Baja')">
+          <img src="IMAGENES/DESFILE  PRIMER PUESTO FIESTAS PATRIAS EN CHINCHA BAJA.png" alt="Desfile Cívico Escolar de la I.E. Juan C. de Mora">
+          <div class="historia-pie-foto">
+            🎖️ Delegación Mora: Marcialidad, patriotismo y tradición escolar en Chincha Baja
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === MISIÓN, VISIÓN, VALORES === -->
+  <section class="section-padding" style="background: #EEF2F7;" id="mision">
+    <div class="container">
+      <h2 class="section-title">Misión, Visión y Valores</h2>
+      <p class="section-subtitle">Los pilares formativos que guían nuestro quehacer educativo diario.</p>
+      <div class="mvv-grid">
+        <div class="mvv-card">
+          <div class="icono">🎯</div>
+          <h3>Misión</h3>
+          <p>Brindar una educación secundaria de calidad, inclusiva y equitativa, que desarrolle las competencias académicas, socioemocionales y ciudadanas de nuestros estudiantes, promoviendo el pensamiento crítico, la creatividad y el respeto por la diversidad cultural.</p>
+        </div>
+        <div class="mvv-card">
+          <div class="icono">🔭</div>
+          <h3>Visión</h3>
+          <p>Ser una institución educativa líder en la provincia de Chincha y la región Ica, reconocida por la excelencia académica, la formación integral de sus estudiantes, el compromiso ético-cívico y la innovación tecnológica orientada al desarrollo comunitario.</p>
+        </div>
+        <div class="mvv-card">
+          <div class="icono">💎</div>
+          <h3>Valores</h3>
+          <ul class="valores-lista">
+            <li>Respeto y responsabilidad cívica</li>
+            <li>Honestidad y solidaridad humana</li>
+            <li>Identidad y patriotismo morino</li>
+            <li>Excelencia académica y esfuerzo</li>
+            <li>Inclusión y equidad social</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === TALLERES Y FORMACIÓN CON FOTOS REALES === -->
+  <section class="section-padding" id="talleres">
+    <div class="container">
+      <h2 class="section-title">Talleres y Áreas de Formación</h2>
+      <p class="section-subtitle">Espacios prácticos que complementan el crecimiento integral de nuestros estudiantes morinos.</p>
+      <div class="talleres-grid">
+        
+        <!-- Taller 1: Comunicación y Oratoria -->
+        <div class="taller-item">
+          <div class="taller-img-wrap" onclick="abrirLightbox('IMAGENES/COMUNICACION ORATORIA.jpeg', 'Taller de Comunicación y Oratoria: Estudiantes fortaleciendo expresión oral')">
+            <img src="IMAGENES/COMUNICACION ORATORIA.jpeg" alt="Taller de Comunicación y Oratoria">
+          </div>
+          <div class="taller-info">
+            <h4>Comunicación y Oratoria</h4>
+            <p>Desarrollamos habilidades de elocuencia, argumentación y liderazgo en nuestros alumnos para debatir y expresarse con seguridad.</p>
+            <span class="taller-tag">Liderazgo & Expresión</span>
+          </div>
+        </div>
+
+        <!-- Taller 2: Ciencia y Tecnología (FENCYT) -->
+        <div class="taller-item">
+          <div class="taller-img-wrap" onclick="abrirLightbox('IMAGENES/16 DE SETIEMBRE CIENCIAS TERCER PUESTO A NIVEL PROVINCIAL FENCYT.png', 'Feria Escolar Nacional de Ciencia y Tecnología FENCYT: Proyectos destacados')">
+            <img src="IMAGENES/16 DE SETIEMBRE CIENCIAS TERCER PUESTO A NIVEL PROVINCIAL FENCYT.png" alt="Ciencia y Tecnología FENCYT">
+          </div>
+          <div class="taller-info">
+            <h4>Ciencia y Tecnología (FENCYT)</h4>
+            <p>Fomentamos el método científico y la formulación de proyectos ecológicos y tecnológicos premiados a nivel provincial y regional.</p>
+            <span class="taller-tag">Investigación Científica</span>
+          </div>
+        </div>
+
+        <!-- Taller 3: Arte y Danza Afroperuana -->
+        <div class="taller-item">
+          <div class="taller-img-wrap" onclick="abrirLightbox('IMAGENES/18 DE JUNIO ARTE FESTIVAL DE DANZA.jpeg', 'Festival de Danza y Folclor Escolar: Rescate de nuestras tradiciones')">
+            <img src="IMAGENES/18 DE JUNIO ARTE FESTIVAL DE DANZA.jpeg" alt="Taller de Arte y Danza">
+          </div>
+          <div class="taller-info">
+            <h4>Arte, Danza y Folclor</h4>
+            <p>Valoramos la riqueza cultural afroperuana y costeña a través de la música, bailes típicos, cajón peruano y expresiones plásticas.</p>
+            <span class="taller-tag">Identidad Cultural</span>
+          </div>
+        </div>
+
+        <!-- Taller 4: Civismo y Brigadas BAPES -->
+        <div class="taller-item">
+          <div class="taller-img-wrap" onclick="abrirLightbox('IMAGENES/JURAMENTACIÓN DE BRIGADIERES PLICIAS Y BAPES.jpeg', 'Juramentación de Brigadieres y Policías Escolares BAPES')">
+            <img src="IMAGENES/JURAMENTACIÓN DE BRIGADIERES PLICIAS Y BAPES.jpeg" alt="Formación Cívica y Brigadas">
+          </div>
+          <div class="taller-info">
+            <h4>Liderazgo Cívico y BAPES</h4>
+            <p>Formación de brigadas de autoprotección escolar, policías escolares y primeros auxilios para cultivar orden y disciplina comunitaria.</p>
+            <span class="taller-tag">Valores Ciudadanos</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === SECCIÓN NUEVA: DIRECTORIO DEL PERSONAL (#directorio) === -->
+  <!-- ============================================================ -->
+  <section class="section-padding section-directorio" id="directorio">
+    <div class="container">
+      <h2 class="section-title">Directorio Institucional y Plana Docente</h2>
+      <p class="section-subtitle">Equipo directivo y plana docente comprometida con la formación integral de los estudiantes de la I.E. Juan C. de Mora (Cód. Modular 0553800).</p>
+
+      <!-- EQUIPO DIRECTIVO DESTACADO -->
+      <div class="directorio-directivos">
+        
+        <!-- Directora -->
+        <div class="directivo-card directora">
+          <div class="directivo-badge">Directora General</div>
+          <div class="directivo-avatar">👩‍💼</div>
+          <div class="directivo-info">
+            <h3>Wong Prada, Claudia Patricia</h3>
+            <span class="directivo-cargo">Directora de la I.E. Juan C. de Mora</span>
+            <p>Liderazgo pedagógico, ético y de gestión institucional al servicio de la juventud de Chincha Baja.</p>
+          </div>
+        </div>
+
+        <!-- Subdirector -->
+        <div class="directivo-card subdirector">
+          <div class="directivo-badge">Subdirección</div>
+          <div class="directivo-avatar">👨‍💼</div>
+          <div class="directivo-info">
+            <h3>Ruiz Sotelo, Percy Jesús</h3>
+            <span class="directivo-cargo">Subdirector - Nivel Secundaria</span>
+            <p>Acompañamiento pedagógico, coordinación curricular y fortalecimiento del aprendizaje escolar.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PLANA DOCENTE -->
+      <div class="plana-docente-box">
+        <div class="plana-docente-header">
+          <div>
+            <h3>Plana Docente de Nivel Secundaria</h3>
+            <p>Directorio de docentes: Nombre completo, Área curricular y Celular de atención a padres de familia.</p>
+          </div>
+          <div class="buscador-docente-wrap">
+            <input type="text" id="buscadorDocente" onkeyup="filtrarDirectorioDocente()" placeholder="🔍 Buscar por nombre o área (ej. Matemática, Arte)...">
+          </div>
+        </div>
+
+        <div class="tabla-directorio-responsive">
+          <table class="tabla-directorio" id="tablaDirectorio">
+            <thead>
+              <tr>
+                <th style="width: 45%;">Apellidos y Nombres</th>
+                <th style="width: 33%;">Área Curricular</th>
+                <th style="width: 22%; text-align: center;">Celular / Contacto</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoDirectorio">
+              <!-- El contenido del directorio se actualizará con los registros del archivo Word -->
+              <tr>
+                <td>
+                  <div class="docente-nombre">
+                    <span class="docente-avatar-mini">WP</span>
+                    <div>
+                      <strong>Wong Prada, Claudia Patricia</strong>
+                      <div style="font-size: 0.78rem; color: #64748B;">Personal Directivo</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="docente-area-badge" style="background: #FEE2E2; color: var(--rojo); border-color: #FECACA;">Dirección General</span></td>
+                <td style="text-align: center;">
+                  <a href="tel:056522136" class="btn-celular">
+                    <span>📞 Contactar</span>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="docente-nombre">
+                    <span class="docente-avatar-mini">RS</span>
+                    <div>
+                      <strong>Ruiz Sotelo, Percy Jesús</strong>
+                      <div style="font-size: 0.78rem; color: #64748B;">Personal Directivo</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="docente-area-badge" style="background: #EFF6FF; color: var(--azul-oscuro); border-color: #BFDBFE;">Subdirección Secundaria</span></td>
+                <td style="text-align: center;">
+                  <a href="tel:056522136" class="btn-celular">
+                    <span>📞 Contactar</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === SECCIÓN: CAPACITACIÓN DOCENTE Y GESTIÓN MINEDU === -->
+  <!-- ============================================================ -->
+  <section class="section-padding section-capacitacion" id="capacitacion">
+    <div class="container">
+      <h2 class="section-title">Capacitación Docente y Gestión MINEDU</h2>
+      <p class="section-subtitle">Acceso directo a las plataformas oficiales del Ministerio de Educación para la formación continua, actualización profesional y administración escolar de nuestra plana docente.</p>
+      
+      <div class="capacitacion-grid">
+        
+        <!-- Tarjeta 1: PerúEduca -->
+        <article class="capacitacion-card destacada">
+          <div class="cap-top">
+            <div class="cap-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=perueduca.pe&sz=128" alt="PerúEduca" loading="lazy">
+            </div>
+            <span class="cap-badge">Autoformación & Certificación</span>
+          </div>
+          <h4>Cursos Virtuales PerúEduca</h4>
+          <p>Campus virtual oficial del MINEDU con cursos autoformativos, microlecciones pedagógicas y programas de actualización docente con constancia y certificación electrónica oficial.</p>
+          <a href="https://campus.perueduca.pe" target="_blank" rel="noopener noreferrer" class="btn-capacitacion">
+            <span>Ingresar a PerúEduca</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- Tarjeta 2: SIFODS -->
+        <article class="capacitacion-card destacada">
+          <div class="cap-top">
+            <div class="cap-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=minedu.gob.pe&sz=128" alt="SIFODS MINEDU" loading="lazy">
+            </div>
+            <span class="cap-badge">Formación en Servicio</span>
+          </div>
+          <h4>Plataforma SIFODS MINEDU</h4>
+          <p>Sistema Integrado de Formación Docente en Servicio. Inscríbete en programas formativos priorizados, diplomados, inducción a la docencia y monitoreo de tu trayectoria profesional.</p>
+          <a href="https://sifods.minedu.gob.pe" target="_blank" rel="noopener noreferrer" class="btn-capacitacion">
+            <span>Acceder a SIFODS</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- Tarjeta 3: SIAGIE -->
+        <article class="capacitacion-card">
+          <div class="cap-top">
+            <div class="cap-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=minedu.gob.pe&sz=128" alt="SIAGIE MINEDU" loading="lazy">
+            </div>
+            <span class="cap-badge">Gestión Escolar</span>
+          </div>
+          <h4>Portal Oficial SIAGIE</h4>
+          <p>Sistema de Información de Apoyo a la Gestión de la Institución Educativa. Gestión de nóminas de matrícula, registro de calificaciones trimestrales y actas consolidadas oficiales.</p>
+          <a href="https://siagie.minedu.gob.pe" target="_blank" rel="noopener noreferrer" class="btn-capacitacion">
+            <span>Ingresar a SIAGIE</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- Tarjeta 4: MINEDU -->
+        <article class="capacitacion-card">
+          <div class="cap-top">
+            <div class="cap-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=gob.pe&sz=128" alt="Portal MINEDU" loading="lazy">
+            </div>
+            <span class="cap-badge">Portal del Estado</span>
+          </div>
+          <h4>Ministerio de Educación (MINEDU)</h4>
+          <p>Portal institucional con las directivas del Año Escolar, marcos del Buen Desempeño Docente, resoluciones viceministeriales, calendario cívico y normas técnico-pedagógicas vigentes.</p>
+          <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer" class="btn-capacitacion">
+            <span>Visitar Portal MINEDU</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+      <!-- Banner de Rutas Formativas Sugeridas -->
+      <div class="capacitacion-banner">
+        <div class="capacitacion-banner-text">
+          <h3>Ejes Formativos Priorizados para el Docente Morino</h3>
+          <p>Recomendamos a nuestra comunidad docente inscribirse periódicamente en las convocatorias abiertas de PerúEduca y SIFODS en las siguientes competencias del Currículo Nacional:</p>
+          <div class="capacitacion-pills">
+            <span class="cap-pill">💻 Competencia Digital e IA en el Aula</span>
+            <span class="cap-pill">📊 Evaluación Formativa y Rúbricas</span>
+            <span class="cap-pill">🤝 Convivencia Escolar y Tutoría</span>
+            <span class="cap-pill">🧠 Neuroeducación y Atención a la Diversidad</span>
+          </div>
+        </div>
+        <div class="capacitacion-banner-actions">
+          <a href="https://campus.perueduca.pe" target="_blank" rel="noopener noreferrer" class="btn" style="background: var(--dorado); color: #0A0F2B; border-color: var(--dorado);">Ver Convocatorias PerúEduca</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === SECCIÓN 1: RECURSOS PARA DOCENTES (#docentes) === -->
+  <!-- ============================================================ -->
+  <section class="section-padding" style="background: #F1F5F9;" id="docentes">
+    <div class="container">
+      <h2 class="section-title">Recursos para Docentes</h2>
+      <p class="section-subtitle">Herramientas digitales para el diseño, gestión y evaluación del aprendizaje.</p>
+      <div class="recursos-grid">
+        
+        <!-- 1. GeoGebra -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=geogebra.org&sz=128" alt="GeoGebra" loading="lazy">
+            </div>
+            <span class="card-badge">Matemáticas</span>
+          </div>
+          <h4>GeoGebra</h4>
+          <p>Software interactivo que dinamiza la enseñanza de geometría, álgebra y cálculo con modelos visuales en tiempo real.</p>
+          <a href="https://www.geogebra.org" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 2. Scratch -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=scratch.mit.edu&sz=128" alt="Scratch" loading="lazy">
+            </div>
+            <span class="card-badge">Pensamiento Lógico</span>
+          </div>
+          <h4>Scratch</h4>
+          <p>Entorno visual de programación por bloques ideal para planificar proyectos transversales y fomentar el razonamiento computacional.</p>
+          <a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 3. Educaplay -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=educaplay.com&sz=128" alt="Educaplay" loading="lazy">
+            </div>
+            <span class="card-badge">Gamificación</span>
+          </div>
+          <h4>Educaplay</h4>
+          <p>Generador de actividades multimedia interactivas como crucigramas, adivinanzas y mapas para consolidar sesiones didácticas.</p>
+          <a href="https://www.educaplay.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 4. Plickers -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=plickers.com&sz=128" alt="Plickers" loading="lazy">
+            </div>
+            <span class="card-badge">Evaluación Rápida</span>
+          </div>
+          <h4>Plickers</h4>
+          <p>Sistema de evaluación formativa inmediata mediante tarjetas impresas con códigos QR sin requerir que los alumnos usen celulares.</p>
+          <a href="https://www.plickers.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 5. Duolingo for Schools -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=schools.duolingo.com&sz=128" alt="Duolingo for Schools" loading="lazy">
+            </div>
+            <span class="card-badge">Idiomas</span>
+          </div>
+          <h4>Duolingo for Schools</h4>
+          <p>Panel docente para asignar misiones de inglés individualizadas y supervisar en tiempo real el progreso fonético y gramatical del aula.</p>
+          <a href="https://schools.duolingo.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 6. Wordwall -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=wordwall.net&sz=128" alt="Wordwall" loading="lazy">
+            </div>
+            <span class="card-badge">Plantillas Didácticas</span>
+          </div>
+          <h4>Wordwall</h4>
+          <p>Crea recursos didácticos digitales e imprimibles con ruedas de opciones, fichas de emparejamiento y cuestionarios adaptables.</p>
+          <a href="https://wordwall.net" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 7. Mentimeter -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=mentimeter.com&sz=128" alt="Mentimeter" loading="lazy">
+            </div>
+            <span class="card-badge">Participación Activa</span>
+          </div>
+          <h4>Mentimeter</h4>
+          <p>Plataforma para activar saberes previos y recopilar opiniones estudiantiles en vivo a través de nubes de palabras y votaciones dinámicas.</p>
+          <a href="https://www.mentimeter.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 8. Baamboozle -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=baamboozle.com&sz=128" alt="Baamboozle" loading="lazy">
+            </div>
+            <span class="card-badge">Dinámicas Grupales</span>
+          </div>
+          <h4>Baamboozle</h4>
+          <p>Juego grupal proyectable con preguntas y retos por equipos que dinamiza la clase desde un único dispositivo para todo el salón.</p>
+          <a href="https://www.baamboozle.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 9. Edpuzzle -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=edpuzzle.com&sz=128" alt="Edpuzzle" loading="lazy">
+            </div>
+            <span class="card-badge">Video Lecciones</span>
+          </div>
+          <h4>Edpuzzle</h4>
+          <p>Convierte videos educativos de YouTube o producción propia en lecciones interactivas con preguntas incrustadas y control de avance.</p>
+          <a href="https://edpuzzle.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 10. Cerebriti Edu -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=cerebriti.com&sz=128" alt="Cerebriti Edu" loading="lazy">
+            </div>
+            <span class="card-badge">Cuestionarios</span>
+          </div>
+          <h4>Cerebriti Edu</h4>
+          <p>Entorno para transformar cualquier tema curricular en minijuegos didácticos cuantificables con estadísticas individuales de rendimiento.</p>
+          <a href="https://edu.cerebriti.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 11. Kahoot! -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=kahoot.com&sz=128" alt="Kahoot!" loading="lazy">
+            </div>
+            <span class="card-badge">Concursos</span>
+          </div>
+          <h4>Kahoot!</h4>
+          <p>Plataforma líder para gamificar el repaso de lecciones mediante concursos de preguntas que fomentan la emoción y concentración del aula.</p>
+          <a href="https://kahoot.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 12. Genially -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=genially.com&sz=128" alt="Genially" loading="lazy">
+            </div>
+            <span class="card-badge">Interactividad</span>
+          </div>
+          <h4>Genially</h4>
+          <p>Diseño de infografías animadas, guías temáticas interactivas y juegos de escape educativos con acabados visuales profesionales.</p>
+          <a href="https://genially.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 13. Khan Academy -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=khanacademy.org&sz=128" alt="Khan Academy" loading="lazy">
+            </div>
+            <span class="card-badge">Secuencias Curriculares</span>
+          </div>
+          <h4>Khan Academy</h4>
+          <p>Biblioteca de secuencias formativas con prácticas dosificadas de matemáticas y ciencias para atender ritmos diferenciados de aprendizaje.</p>
+          <a href="https://es.khanacademy.org" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 14. CapCut -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=capcut.com&sz=128" alt="CapCut" loading="lazy">
+            </div>
+            <span class="card-badge">Edición de Video</span>
+          </div>
+          <h4>CapCut</h4>
+          <p>Herramienta moderna para editar cápsulas educativas, subtitular videos didácticos y producir recursos audiovisuales atractivos.</p>
+          <a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 15. Canva -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=canva.com&sz=128" alt="Canva" loading="lazy">
+            </div>
+            <span class="card-badge">Diseño Gráfico</span>
+          </div>
+          <h4>Canva</h4>
+          <p>Suite creativa para confeccionar fichas de trabajo, rúbricas visuales, afiches informativos y presentaciones pedagógicas intuitivas.</p>
+          <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Visitar plataforma</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === SECCIÓN 2: RECURSOS PARA ESTUDIANTES (#estudiantes) === -->
+  <!-- ============================================================ -->
+  <section class="section-padding" style="background: #EEF2F7;" id="estudiantes">
+    <div class="container">
+      <h2 class="section-title">Recursos para Estudiantes</h2>
+      <p class="section-subtitle">Plataformas de participación, práctica, gamificación e interacción educativa.</p>
+      <div class="recursos-grid">
+
+        <!-- 1. PhET Simulations -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=phet.colorado.edu&sz=128" alt="PhET Simulations" loading="lazy">
+            </div>
+            <span class="card-badge">Laboratorio Virtual</span>
+          </div>
+          <h4>PhET Simulations</h4>
+          <p>Explora fenómenos de física, química y matemáticas manipulando variables en simulaciones científicas virtuales e intuitivas.</p>
+          <a href="https://phet.colorado.edu/es/" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 2. Blooket -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=blooket.com&sz=128" alt="Blooket" loading="lazy">
+            </div>
+            <span class="card-badge">Repaso Lúdico</span>
+          </div>
+          <h4>Blooket</h4>
+          <p>Refuerza los temas de clase participando en juegos de preguntas y respuestas con modalidades arcade y recompensas virtuales.</p>
+          <a href="https://www.blooket.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 3. Gimkit -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=gimkit.com&sz=128" alt="Gimkit" loading="lazy">
+            </div>
+            <span class="card-badge">Estrategia</span>
+          </div>
+          <h4>Gimkit</h4>
+          <p>Juegos de conocimiento interactivo creados por profesores donde aplicas estrategia y acumulas puntos al resolver desafíos temáticos.</p>
+          <a href="https://www.gimkit.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 4. Classcraft -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=classcraft.com&sz=128" alt="Classcraft" loading="lazy">
+            </div>
+            <span class="card-badge">Comunidad & Rol</span>
+          </div>
+          <h4>Classcraft</h4>
+          <p>Vive las clases escolares como una aventura de rol cooperativa ganando poderes y trabajando en equipo con tus compañeros de aula.</p>
+          <a href="https://www.classcraft.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 5. Quizizz -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=quizizz.com&sz=128" alt="Quizizz" loading="lazy">
+            </div>
+            <span class="card-badge">Autoevaluación</span>
+          </div>
+          <h4>Quizizz</h4>
+          <p>Responde cuestionarios y tarjetas de estudio a tu propio ritmo con retroalimentación instantánea y divertidos potenciadores.</p>
+          <a href="https://quizizz.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 6. Kahoot! -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=kahoot.com&sz=128" alt="Kahoot!" loading="lazy">
+            </div>
+            <span class="card-badge">Juegos en Vivo</span>
+          </div>
+          <h4>Kahoot!</h4>
+          <p>Ingresa el código PIN proporcionado por tu profesor y compite amistosamente en rondas de preguntas en vivo desde tu dispositivo.</p>
+          <a href="https://kahoot.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 7. Flip -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=flip.com&sz=128" alt="Flip" loading="lazy">
+            </div>
+            <span class="card-badge">Debate Audiovisual</span>
+          </div>
+          <h4>Flip</h4>
+          <p>Comparte tus opiniones y exposiciones escolares grabando videos cortos y creativos en un espacio seguro supervisado por tus docentes.</p>
+          <a href="https://flip.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 8. K12 -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=k12.com&sz=128" alt="K12" loading="lazy">
+            </div>
+            <span class="card-badge">Cursos & Refuerzo</span>
+          </div>
+          <h4>K12</h4>
+          <p>Accede a contenidos y recursos formativos diseñados para afianzar competencias académicas en las principales materias de secundaria.</p>
+          <a href="https://www.k12.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 9. Code.org -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=code.org&sz=128" alt="Code.org" loading="lazy">
+            </div>
+            <span class="card-badge">Programación</span>
+          </div>
+          <h4>Code.org</h4>
+          <p>Aprende a programar paso a paso resolviendo rompecabezas interactivos con personajes populares en la Hora del Código.</p>
+          <a href="https://code.org" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 10. Scratch -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=scratch.mit.edu&sz=128" alt="Scratch" loading="lazy">
+            </div>
+            <span class="card-badge">Creación Digital</span>
+          </div>
+          <h4>Scratch</h4>
+          <p>Diseña tus propias historias animadas, videojuegos y simulaciones conectando bloques de instrucciones lógicas.</p>
+          <a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 11. Mindomo -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=mindomo.com&sz=128" alt="Mindomo" loading="lazy">
+            </div>
+            <span class="card-badge">Mapas Mentales</span>
+          </div>
+          <h4>Mindomo</h4>
+          <p>Estructura ideas complejas y elabora mapas conceptuales colaborativos para preparar resúmenes y exposiciones escolares.</p>
+          <a href="https://www.mindomo.com/es/" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 12. XMind -->
+        <article class="recurso-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=xmind.app&sz=128" alt="XMind" loading="lazy">
+            </div>
+            <span class="card-badge">Organización Visual</span>
+          </div>
+          <h4>XMind</h4>
+          <p>Organiza cronogramas de estudio, lluvias de ideas y esquemas temáticos mediante diagramas visualmente ordenados y claros.</p>
+          <a href="https://xmind.app" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Explorar recurso</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === SECCIÓN 3: INTELIGENCIA ARTIFICIAL EDUCATIVA (#ia) === -->
+  <!-- ============================================================ -->
+  <section class="section-padding section-ia" id="ia">
+    <div class="container">
+      <h2 class="section-title">Inteligencia Artificial Educativa</h2>
+      <p class="section-subtitle">Asistentes de IA generativa para la investigación, creación de contenido y productividad.</p>
+      <div class="ia-grid">
+
+        <!-- 1. DeepSeek -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt="DeepSeek" loading="lazy">
+            </div>
+            <span class="card-badge">Razonamiento & Lógica</span>
+          </div>
+          <h4>DeepSeek</h4>
+          <p>Modelo de lenguaje con alta capacidad de razonamiento matemático, análisis de datos y resolución paso a paso de problemas científicos.</p>
+          <a href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 2. Gemini -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Gemini" loading="lazy">
+            </div>
+            <span class="card-badge">Multimodal</span>
+          </div>
+          <h4>Gemini</h4>
+          <p>Inteligencia artificial de Google que comprende textos, imágenes y documentos para sintetizar información y generar explicaciones didácticas.</p>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 3. ChatGPT -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT" loading="lazy">
+            </div>
+            <span class="card-badge">Conversacional</span>
+          </div>
+          <h4>ChatGPT</h4>
+          <p>Asistente conversacional de OpenAI útil para formular borradores, aclarar conceptos curriculares y practicar idiomas de manera interactiva.</p>
+          <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 4. Copilot -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Copilot" loading="lazy">
+            </div>
+            <span class="card-badge">Productividad Web</span>
+          </div>
+          <h4>Copilot</h4>
+          <p>Asistente inteligente de Microsoft integrado a la web que brinda respuestas citadas, crea resúmenes bibliográficos y asiste en redacción.</p>
+          <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 5. Gamma -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=gamma.app&sz=128" alt="Gamma" loading="lazy">
+            </div>
+            <span class="card-badge">Diapositivas & Docs</span>
+          </div>
+          <h4>Gamma</h4>
+          <p>Genera presentaciones estructuradas, esquemas y páginas informativas en segundos a partir de apuntes o temas pedagógicos específicos.</p>
+          <a href="https://gamma.app" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 6. MagicSchool -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=magicschool.ai&sz=128" alt="MagicSchool" loading="lazy">
+            </div>
+            <span class="card-badge">Exclusiva Docente</span>
+          </div>
+          <h4>MagicSchool</h4>
+          <p>Suite especializada para educadores que facilita la redacción de rúbricas, planes de sesión diferenciados y adaptaciones curriculares.</p>
+          <a href="https://www.magicschool.ai" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+        <!-- 7. NotebookLM -->
+        <article class="ia-card">
+          <div class="card-top">
+            <div class="card-icon-wrap">
+              <img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=128" alt="NotebookLM" loading="lazy">
+            </div>
+            <span class="card-badge">Investigación Documental</span>
+          </div>
+          <h4>NotebookLM</h4>
+          <p>Cuaderno inteligente de Google que responde preguntas basándose rigurosamente en tus propios archivos PDF, lecturas y fuentes escolares.</p>
+          <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer" class="btn-card">
+            <span>Probar asistente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- === GALERÍA DE FOTOS REALES CON FILTROS Y LIGHTBOX === -->
+  <!-- ============================================================ -->
+  <section class="section-padding" style="background: #EEF2F7;" id="galeria">
+    <div class="container">
+      <h2 class="section-title">Galería de Vida Institucional</h2>
+      <p class="section-subtitle">Momentos, tradiciones y vivencias que reflejan el orgullo y el espíritu de la comunidad morina.</p>
+      
+      <!-- Filtros de Galería -->
+      <div class="galeria-filtros">
+        <button class="filtro-btn active" onclick="filtrarGaleria('todos', this)">Todas las fotos</button>
+        <button class="filtro-btn" onclick="filtrarGaleria('civico', this)">Cívico & Patriótico</button>
+        <button class="filtro-btn" onclick="filtrarGaleria('arte', this)">Arte & Tradición</button>
+        <button class="filtro-btn" onclick="filtrarGaleria('comunidad', this)">Comunidad & Eventos</button>
+        <button class="filtro-btn" onclick="filtrarGaleria('valores', this)">Formación & Valores</button>
+      </div>
+
+      <div class="galeria-grid">
+        
+        <!-- Foto 1: Danza y Baile -->
+        <div class="galeria-item" data-categoria="arte" onclick="abrirLightbox('IMAGENES/18 JUNIO ARTE BAILE.jpeg', 'Presentación Folclórica y Danza Tradicional de Estudiantes Morinos')">
+          <img src="IMAGENES/18 JUNIO ARTE BAILE.jpeg" alt="Danza y Baile" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Danza y Folclor Costeño</h5>
+            <span>🎭 Arte & Tradición &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 2: Día de la Bandera -->
+        <div class="galeria-item" data-categoria="civico" onclick="abrirLightbox('IMAGENES/Día de la Bandera del Perú.png', 'Homenaje y Renovación de Juramento en el Día de la Bandera')">
+          <img src="IMAGENES/Día de la Bandera del Perú.png" alt="Día de la Bandera" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Día de la Bandera del Perú</h5>
+            <span>🇵🇪 Civismo Escolar &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 3: Reinas Juan C. de Mora -->
+        <div class="galeria-item" data-categoria="comunidad" onclick="abrirLightbox('IMAGENES/13 jun REINAS JUAN C DE MORA.png', 'Ceremonia de Coronación y Reinas del Colegio Juan C. de Mora')">
+          <img src="IMAGENES/13 jun REINAS JUAN C DE MORA.png" alt="Reinas Juan C. de Mora" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Reinas Juan C. de Mora</h5>
+            <span>👑 Aniversario Institucional &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 4: Candidatas al Reinado -->
+        <div class="galeria-item" data-categoria="comunidad" onclick="abrirLightbox('IMAGENES/5 DE JUNIO CANDIDATAS AL REINADO.jpeg', 'Presentación de Candidatas al Reinado por el Aniversario del Colegio')">
+          <img src="IMAGENES/5 DE JUNIO CANDIDATAS AL REINADO.jpeg" alt="Candidatas al Reinado" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Candidatas al Reinado</h5>
+            <span>✨ Juventud & Tradición &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 5: Plan Lector y Comprensión -->
+        <div class="galeria-item" data-categoria="valores" onclick="abrirLightbox('IMAGENES/COMUNICACION LECTURA.jpeg', 'Jornada del Plan Lector y Comprensión de Textos en el Aula')">
+          <img src="IMAGENES/COMUNICACION LECTURA.jpeg" alt="Comunicación y Lectura" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Plan Lector & Hábitos de Lectura</h5>
+            <span>📖 Desarrollo Intelectual &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 6: Día de la Madre -->
+        <div class="galeria-item" data-categoria="comunidad" onclick="abrirLightbox('IMAGENES/DIA DE LA MADRE.png', 'Emotivo Homenaje a las Madres de la Familia Morina')">
+          <img src="IMAGENES/DIA DE LA MADRE.png" alt="Día de la Madre" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Celebración del Día de la Madre</h5>
+            <span>💐 Familia & Comunidad &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 7: Día del Padre -->
+        <div class="galeria-item" data-categoria="comunidad" onclick="abrirLightbox('IMAGENES/DÍA DEL PADRE.jpeg', 'Actividad Conmemorativa y Homenaje al Día del Padre Morino')">
+          <img src="IMAGENES/DÍA DEL PADRE.jpeg" alt="Día del Padre" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Homenaje al Padre Morino</h5>
+            <span>👔 Integración Familiar &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 8: Fiestas Patrias -->
+        <div class="galeria-item" data-categoria="civico" onclick="abrirLightbox('IMAGENES/FELICES FIESTAS PATRIAS.png', 'Saludo Conmemorativo y Fervor Patriótico por Fiestas Patrias')">
+          <img src="IMAGENES/FELICES FIESTAS PATRIAS.png" alt="Felices Fiestas Patrias" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Fervor por Fiestas Patrias</h5>
+            <span>🔴⚪ Orgullo Peruano &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 9: Semana de la Educación Religiosa -->
+        <div class="galeria-item" data-categoria="valores" onclick="abrirLightbox('IMAGENES/SEMANA DE LA EDUCACION RELIGIOSA.jpg', 'Semana de la Educación Religiosa y Reflexión Espiritual')">
+          <img src="IMAGENES/SEMANA DE LA EDUCACION RELIGIOSA.jpg" alt="Semana de la Educación Religiosa" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Semana de Educación Religiosa</h5>
+            <span>🕊️ Fe y Convivencia &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 10: Valores y Formación Humana -->
+        <div class="galeria-item" data-categoria="valores" onclick="abrirLightbox('IMAGENES/RELIGIÓN.jpeg', 'Actividades de Pastoral y Valores Ético-Morales')">
+          <img src="IMAGENES/RELIGIÓN.jpeg" alt="Valores Morales" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Valores y Espiritualidad</h5>
+            <span>🕯️ Formación Humana &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 11: Festival Artístico -->
+        <div class="galeria-item" data-categoria="arte" onclick="abrirLightbox('IMAGENES/18 DE JUNIO ARTE FESTIVAL DE DANZA.jpeg', 'Gala de Danzas Tradicionales Afroperuanas en Chincha Baja')">
+          <img src="IMAGENES/18 DE JUNIO ARTE FESTIVAL DE DANZA.jpeg" alt="Festival de Danza" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Festival Artístico Escolar</h5>
+            <span>🥁 Ritmo y Color Morino &bull; Ver foto</span>
+          </div>
+        </div>
+
+        <!-- Foto 12: Simulacro y Brigadas -->
+        <div class="galeria-item" data-categoria="civico" onclick="abrirLightbox('IMAGENES/1 DE JUNIO BRIDADAS SIMULACRO MULTIPELIGROS.jpeg', 'Brigadas Estudiantiles durante el Simulacro Nacional Multipeligro')">
+          <img src="IMAGENES/1 DE JUNIO BRIDADAS SIMULACRO MULTIPELIGROS.jpeg" alt="Brigadas de Simulacro" loading="lazy">
+          <div class="galeria-overlay">
+            <h5>Brigadas de Gestión del Riesgo</h5>
+            <span>🚨 Prevención & Seguridad &bull; Ver foto</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- === LOGROS REALES CON FOTOGRAFÍAS === -->
+  <section class="section-padding" id="logros">
+    <div class="container">
+      <h2 class="section-title">Logros y Reconocimientos</h2>
+      <p class="section-subtitle">El compromiso con la excelencia y el esfuerzo de nuestros alumnos reflejado en galardones oficiales.</p>
+      <div class="logros-grid">
+        
+        <!-- Logro 1: Desfile Cívico Escolar -->
+        <div class="logro-card">
+          <div class="logro-img-wrap" onclick="abrirLightbox('IMAGENES/DESFILE  PRIMER PUESTO FIESTAS PATRIAS EN CHINCHA BAJA.png', 'Primer Puesto en el Desfile Cívico Escolar de Fiestas Patrias - Chincha Baja')">
+            <img src="IMAGENES/DESFILE  PRIMER PUESTO FIESTAS PATRIAS EN CHINCHA BAJA.png" alt="Primer Puesto Desfile Cívico">
+            <span class="logro-tag">🥇 Campeones Distritales</span>
+          </div>
+          <div class="logro-body">
+            <h4>Primer Puesto en Desfile de Fiestas Patrias</h4>
+            <p>Nuestra delegación de secundaria y banda de música obtuvieron el máximo galardón en el Desfile Cívico Escolar de Chincha Baja, demostrando impecable marcialidad, paso firme e identidad patria.</p>
+          </div>
+        </div>
+
+        <!-- Logro 2: Oratoria Regional -->
+        <div class="logro-card">
+          <div class="logro-img-wrap" onclick="abrirLightbox('IMAGENES/COMUNICACIÓN PRIMER PUESTO EN ORATORIA A NIVEL REGIONAL.jpeg', 'Primer Puesto Regional en el Concurso de Oratoria y Comunicación')">
+            <img src="IMAGENES/COMUNICACIÓN PRIMER PUESTO EN ORATORIA A NIVEL REGIONAL.jpeg" alt="Primer Puesto en Oratoria Regional">
+            <span class="logro-tag">🏆 Nivel Regional Ica</span>
+          </div>
+          <div class="logro-body">
+            <h4>Primer Puesto en Oratoria a Nivel Regional</h4>
+            <p>Destacada participación de nuestro estudiante de secundaria en el certamen regional de comunicación, obteniendo el primer lugar frente a representaciones de toda la región Ica con un emotivo discurso cívico.</p>
+          </div>
+        </div>
+
+        <!-- Logro 3: Feria de Ciencias FENCYT -->
+        <div class="logro-card">
+          <div class="logro-img-wrap" onclick="abrirLightbox('IMAGENES/16 DE SETIEMBRE CIENCIAS TERCER PUESTO A NIVEL PROVINCIAL FENCYT.png', 'Tercer Puesto a Nivel Provincial en la Feria Escolar de Ciencias FENCYT')">
+            <img src="IMAGENES/16 DE SETIEMBRE CIENCIAS TERCER PUESTO A NIVEL PROVINCIAL FENCYT.png" alt="Tercer Puesto en Feria de Ciencias FENCYT">
+            <span class="logro-tag">🔬 FENCYT Provincial</span>
+          </div>
+          <div class="logro-body">
+            <h4>Tercer Puesto Provincial en Ciencias (FENCYT)</h4>
+            <p>Alumnos del área de Ciencia y Tecnología alcanzaron el podio en la etapa provincial de la Feria Escolar Nacional de Ciencia y Tecnología con una propuesta innovadora de sostenibilidad ecológica.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- === NOTICIAS Y ACTIVIDADES CON FOTOS REALES === -->
+  <section class="section-padding" style="background: #EEF2F7;" id="noticias">
+    <div class="container">
+      <h2 class="section-title">Noticias y Actividades Recientes</h2>
+      <p class="section-subtitle">Acontecimientos, jornadas cívicas y actividades que enriquecen la vida de nuestra comunidad escolar.</p>
+      <div class="noticias-grid">
+        
+        <!-- Noticia 1: Juramentación de Brigadieres -->
+        <div class="noticia-card">
+          <div class="noticia-img-wrap" onclick="abrirLightbox('IMAGENES/JURAMENTACIÓN DE BRIGADIERES PLICIAS Y BAPES.jpeg', 'Juramentación de Brigadieres Generales, Policías Escolares y Brigadas de Autoprotección Escolar BAPES')">
+            <img src="IMAGENES/JURAMENTACIÓN DE BRIGADIERES PLICIAS Y BAPES.jpeg" alt="Juramentación de Brigadieres y BAPES">
+            <span class="noticia-fecha">Mayo 2024</span>
+          </div>
+          <div class="noticia-contenido">
+            <h4>Juramentación de Brigadieres, Policías y BAPES</h4>
+            <p>Con la presencia de autoridades policiales y padres de familia, se realizó la solemne juramentación de nuestros brigadieres escolares y brigadas BAPES para velar por la seguridad estudiantil.</p>
+            <span class="leer-mas" onclick="abrirLightbox('IMAGENES/JURAMENTACIÓN DE BRIGADIERES PLICIAS Y BAPES.jpeg', 'Ceremonia de Juramentación de Policías Escolares y BAPES')">Ver fotografía oficial →</span>
+          </div>
+        </div>
+
+        <!-- Noticia 2: Semana Afroperuana -->
+        <div class="noticia-card">
+          <div class="noticia-img-wrap" onclick="abrirLightbox('IMAGENES/SEMANA AFRO.jpeg', 'Celebración y Festejo por la Semana de la Identidad Afroperuana en Chincha')">
+            <img src="IMAGENES/SEMANA AFRO.jpeg" alt="Semana Afroperuana">
+            <span class="noticia-fecha">Junio 2024</span>
+          </div>
+          <div class="noticia-contenido">
+            <h4>Celebración de la Semana de la Identidad Afroperuana</h4>
+            <p>Nuestra comunidad educativa conmemoró la Semana de la Cultura Afroperuana con festivales gastronómicos, zapateo, poesía y estampas costumbristas que revaloran el patrimonio chinchanobajino.</p>
+            <span class="leer-mas" onclick="abrirLightbox('IMAGENES/SEMANA AFRO.jpeg', 'Semana de la Cultura Afroperuana en Chincha Baja')">Ver fotografía oficial →</span>
+          </div>
+        </div>
+
+        <!-- Noticia 3: Simulacro Nacional Multipeligros -->
+        <div class="noticia-card">
+          <div class="noticia-img-wrap" onclick="abrirLightbox('IMAGENES/1 DE JUNIO BRIDADAS SIMULACRO MULTIPELIGROS.jpeg', 'Simulacro Nacional Multipeligros con activa participación de las brigadas de emergencia')">
+            <img src="IMAGENES/1 DE JUNIO BRIDADAS SIMULACRO MULTIPELIGROS.jpeg" alt="Simulacro Multipeligros">
+            <span class="noticia-fecha">Junio 2024</span>
+          </div>
+          <div class="noticia-contenido">
+            <h4>Simulacro Nacional: Compromiso de Nuestras Brigadas</h4>
+            <p>Demostrando preparación y civismo, nuestros brigadieres guiaron la evacuación ordenada de pabellones y atención de heridos simulados durante el ejercicio nacional preventivo.</p>
+            <span class="leer-mas" onclick="abrirLightbox('IMAGENES/1 DE JUNIO BRIDADAS SIMULACRO MULTIPELIGROS.jpeg', 'Brigadas en acción durante el Simulacro Escolar')">Ver fotografía oficial →</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- === CONTACTO, UBICACIÓN Y CANALES OFICIALES === -->
+  <section class="section-padding" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Contáctanos y Canales Oficiales</h2>
+      <p class="section-subtitle">Estamos aquí para atenderte. Comunícate con nuestra secretaría y dirección escolar o síguenos en redes sociales.</p>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <h3>Información Institucional</h3>
+          <ul>
+            <li>📍 <strong>Dirección:</strong> Calle Mora 114, Chincha Baja, Ica - Perú</li>
+            <li>🏫 <strong>Código Modular:</strong> 0553800 (Nivel Secundaria)</li>
+            <li>👩‍💼 <strong>Directora:</strong> Wong Prada, Claudia Patricia</li>
+            <li>👨‍💼 <strong>Subdirector:</strong> Ruiz Sotelo, Percy Jesús</li>
+            <li>📞 <strong>Teléfono:</strong> (056) 522136</li>
+            <li>✉️ <strong>Correo Oficial:</strong> contacto@iejuanmora.edu.pe</li>
+            <li>🕒 <strong>Horario de Atención:</strong> Lunes a Viernes, 7:30 AM - 5:00 PM</li>
+          </ul>
+
+          <!-- Redes y accesos destacados -->
+          <div class="redes-destacadas">
+            <a href="https://www.facebook.com/profile.php?id=61588286226233" target="_blank" rel="noopener noreferrer" class="red-card" title="Facebook de la I.E. Juan C. de Mora">
+              <div class="red-card-left">
+                <div class="red-icon">📘</div>
+                <div>
+                  <strong>Facebook Oficial I.E. Juan C. de Mora</strong>
+                  <div style="font-size: 0.8rem; color: #64748B;">Noticias, comunicados y transmisiones en vivo</div>
+                </div>
+              </div>
+              <span style="color: #1877F2; font-weight: 700;">Visitar página →</span>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61592740835634" target="_blank" rel="noopener noreferrer" class="red-card" title="Facebook de la UGEL Chincha">
+              <div class="red-card-left">
+                <div class="red-icon">🏛️</div>
+                <div>
+                  <strong>Facebook Oficial UGEL Chincha</strong>
+                  <div style="font-size: 0.8rem; color: #64748B;">Unidad de Gestión Educativa Local de Chincha</div>
+                </div>
+              </div>
+              <span style="color: #1877F2; font-weight: 700;">Visitar página →</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 25px; background: #E8EDF5; height: 160px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--azul-oscuro); font-weight: 700; border: 2px dashed #94A3B8; text-align: center; padding: 20px;">
+            <span style="font-size: 2rem; margin-bottom: 5px;">📍</span>
+            <span>Distrito Histórico de Chincha Baja &bull; Cód. Modular 0553800</span>
+            <span style="font-size: 0.85rem; color: #64748B; font-weight: 500;">Provincia de Chincha, Región Ica - Perú</span>
+          </div>
+        </div>
+
+        <div class="contacto-form">
+          <h3>Envíanos un Mensaje</h3>
+          <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias por contactar a la I.E. Juan C. de Mora! Le responderemos a la brevedad.');">
+            <input type="text" placeholder="Tu Nombre Completo" required>
+            <input type="email" placeholder="Tu Correo Electrónico" required>
+            <input type="text" placeholder="Asunto del Mensaje" required>
+            <textarea rows="5" placeholder="Escribe tu consulta o trámite aquí..." required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FOOTER CON LOGOTIPO INSTITUCIONAL Y ENLACES ACTUALIZADOS === -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+            <img src="IMAGENES/insignia.png" alt="Insignia I.E. Juan C. de Mora" style="width: 48px; height: 48px; object-fit: contain;">
+            <h4 style="margin-bottom: 0;">I.E. Juan C. de Mora</h4>
+          </div>
+          <p>Institución educativa pública de nivel secundaria de Chincha Baja, comprometida con la formación de ciudadanos libres, críticos, solidarios y líderes.</p>
+          <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Directora:</strong> Wong Prada, Claudia Patricia</p>
+          <p style="font-size: 0.85rem;"><strong>Subdirector:</strong> Ruiz Sotelo, Percy Jesús</p>
+          <p style="margin-top: 10px; color: var(--dorado); font-weight: 700;">Código Modular: 0553800</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia institucional</a></li>
+            <li><a href="#directorio">Directorio del Personal 2026</a></li>
+            <li><a href="#capacitacion">Capacitación Docente (PerúEduca/SIFODS)</a></li>
+            <li><a href="#docentes">Recursos para Docentes</a></li>
+            <li><a href="#estudiantes">Recursos para Estudiantes</a></li>
+            <li><a href="#ia">Inteligencia Artificial Educativa</a></li>
+            <li><a href="#galeria">Galería Fotográfica</a></li>
+            <li><a href="#contacto">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Portales del Estado</h4>
+          <ul>
+            <li><a href="https://campus.perueduca.pe" target="_blank" rel="noopener noreferrer">🎓 Campus Virtual PerúEduca</a></li>
+            <li><a href="https://sifods.minedu.gob.pe" target="_blank" rel="noopener noreferrer">📋 SIFODS MINEDU</a></li>
+            <li><a href="https://siagie.minedu.gob.pe" target="_blank" rel="noopener noreferrer">📊 SIAGIE MINEDU</a></li>
+            <li><a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer">🏛️ Ministerio de Educación (MINEDU)</a></li>
+          </ul>
+          <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">Av. Circunvalación S/N, Chincha Alta &bull; UGEL Chincha</p>
+        </div>
+        <div class="footer-col">
+          <h4>Canales Oficiales</h4>
+          <p>
+            <a href="https://www.facebook.com/profile.php?id=61588286226233" target="_blank" rel="noopener noreferrer" style="color: #60A5FA; font-weight: 700;">
+              📘 Facebook: I.E. Juan C. de Mora
+            </a>
+          </p>
+          <p>
+            <a href="https://www.facebook.com/profile.php?id=61592740835634" target="_blank" rel="noopener noreferrer" style="color: #93C5FD; font-weight: 600;">
+              🏛️ Facebook: UGEL Chincha
+            </a>
+          </p>
+          <p>📸 Instagram: @iejuanmora</p>
+          <p>▶️ YouTube: IE Juan C. de Mora</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 I.E. Juan C. de Mora - Chincha Baja. Código Modular: 0553800 &bull; Bodas de Oro (1974 - 2024). Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- === LIGHTBOX MODAL PARA VISTA PREVIA DE IMÁGENES === -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="cerrarLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="cerrarLightbox()" aria-label="Cerrar modal">&times;</button>
+      <img id="lightboxImg" src="" alt="Fotografía ampliada" class="lightbox-img">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- === JAVASCRIPT === -->
+  <script>
+    // === MENÚ RESPONSIVE (MÓVIL) ===
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+
+    // === CERRAR MENÚ AL CLICKEAR EN UN ENLACE ===
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('menu');
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
+      });
+    });
+
+    // === SCROLL SUAVE CON OFFSET DE CABECERA ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // === FILTRO EN TIEMPO REAL DEL DIRECTORIO DOCENTE ===
+    function filtrarDirectorioDocente() {
+      const input = document.getElementById('buscadorDocente').value.toLowerCase();
+      const filas = document.querySelectorAll('#cuerpoDirectorio tr');
+      filas.forEach(fila => {
+        const texto = fila.textContent.toLowerCase();
+        fila.style.display = texto.includes(input) ? '' : 'none';
+      });
+    }
+
+    // === LIGHTBOX INTERACTIVO ===
+    function abrirLightbox(src, titulo) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      img.src = src;
+      img.alt = titulo || 'Fotografía de la I.E. Juan C. de Mora';
+      caption.textContent = titulo || '';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') cerrarLightbox();
+    });
+
+    // === FILTROS DE GALERÍA ===
+    function filtrarGaleria(categoria, boton) {
+      document.querySelectorAll('.filtro-btn').forEach(btn => btn.classList.remove('active'));
+      boton.classList.add('active');
+
+      const items = document.querySelectorAll('.galeria-item');
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-categoria');
+        if (categoria === 'todos' || itemCat === categoria) {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 30);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.92)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 250);
+        }
+      });
+    }
+
+    // === ANIMACIÓN DE APARICIÓN CON INTERSECTION OBSERVER ===
+    const observerOptions = { 
+      threshold: 0.08, 
+      rootMargin: '0px 0px -30px 0px' 
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Selecciona todas las tarjetas del portal incluyendo la nueva sección de capacitación y directorio
+    document.querySelectorAll('.mvv-card, .taller-item, .noticia-card, .galeria-item, .logro-card, .recurso-card, .ia-card, .capacitacion-card, .directivo-card, .plana-docente-box').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
